@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+        }
+        .form-container h2 {
+            text-align: center;
+            color: red;
+            background-color: yellow;
+            padding: 10px;
+        }
+        .form-container table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        .form-container td {
+            padding: 10px;
+            background-color: #00a2e8;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container textarea,
+        .form-container select,
+        .form-container input[type="file"],
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 5px;
+        }
+        .form-container input[type="checkbox"],
+        .form-container input[type="radio"] {
+            margin-right: 10px;
+        }
+        .form-container .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .form-container .buttons button {
+            flex-grow: 1;
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <table>
+                <tr>
+                    <td>Enter Name</td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Enter Password</td>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td>Enter Address</td>
+                    <td><textarea id="address" name="address" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Select Game</td>
+                    <td>
+                        <input type="checkbox" name="game" value="Hockey"> Hockey<br>
+                        <input type="checkbox" name="game" value="Football"> Football<br>
+                        <input type="checkbox" name="game" value="Badminton"> Badminton<br>
+                        <input type="checkbox" name="game" value="Cricket"> Cricket<br>
+                        <input type="checkbox" name="game" value="Volleyball"> Volleyball<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" value="Male" required> Male<br>
+                        <input type="radio" name="gender" value="Female" required> Female<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select your age</td>
+                    <td><input type="number" id="age" name="age" min="1" max="100" required></td>
+                </tr>
+                <tr>
+                    <td>Select Photo</td>
+                    <td><input type="file" id="photo" name="photo"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="buttons">
+                        <button type="button" onclick="clickMe()">   Click Me   </button>
+                        <button type="reset">  Reset  </button>
+                        <button type="submit">  Submit Form  </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+            this.reset();
+        });
+
+        function clickMe() {
+            var form = document.getElementById('registrationForm');
+            alert('Form submitted!');
+            form.reset();
+        }
+    </script>
+</body>
+</html>
